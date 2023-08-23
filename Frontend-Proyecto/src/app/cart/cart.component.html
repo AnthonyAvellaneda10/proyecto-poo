@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>E Store - eCommerce HTML Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    </head>
+
+    <app-navbar></app-navbar>
+    <body>
+        <!-- Breadcrumb End -->
+        
+        <!-- Cart Start -->
+        <div class="cart-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart-page-inner">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th>Total</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="align-middle">
+                                        <!--let item of lista-->
+                                        <tr *ngFor="let item of dataService.productos2; let i = index">
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img [src]="item.imagen" alt="Image"></a>
+                                                    <p>{{item.nombre}}</p>
+                                                </div>
+                                            </td>
+                                            <td>${{item.precioUnitario}}</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button class="btn-minus" ><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="1">
+                                                    <button class="btn-plus" ><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td>${{item.precioUnitario}}</td>
+                                            <td><button (click)="removeCart(5)"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cart-page-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="coupon">
+                                        <input type="text" placeholder="Coupon Code">
+                                        <button>Apply Code</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cart-summary">
+                                        <div class="cart-content">
+                                            <h1>Resumen de la compra</h1>
+                                            <p>Sub Total<span>$99</span></p>
+                                            <p>Costo de envío<span>$1</span></p>
+                                            <h2>Grand Total<span>$100</span></h2>
+                                        </div>
+                                        <div class="cart-btn" style="margin-left: 88px;">
+                                            <button style="width: 128px;">Realizar compra</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart End -->
+    </body>
+</html>

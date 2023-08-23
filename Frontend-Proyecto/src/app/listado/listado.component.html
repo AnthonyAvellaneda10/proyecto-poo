@@ -1,0 +1,46 @@
+<main class="main" *ngIf="(dataService.productos.length === 0) && (dataService.opcion == 'nomostrar')">
+  <div class="container">
+    <h2 class="main-title" style="line-height: 33px;">Nuevos productos para ti</h2>
+    <section class="container-products p-2" >
+      <div class="product" *ngFor="let item of lista">
+        <!--<span>Mensaje desde el componente hijo: {{ nombre }}</span>
+        <app-navbar (enviar)="recibirNombre($event)"></app-navbar>-->
+        <img [src]="item.imagen" alt="" class="product__img">
+        <div class="product__description">
+          <h3 class="product__title text-sm text-gray-400 mt-4">{{item.marca}}</h3>
+          <p class="text-center font-bold text-sm mt-2">{{item.nombre}}</p>
+          <span class="product__price mt-2">${{item.precioUnitario}}</span>
+        </div>
+        <i class="product__icon cursor-pointer fas fa-cart-plus" (click)="agregarCarrito(1,item)"></i>
+        <!--<a class="text-white bg-red-500 hover:bg-red-700 cursor-pointer w-20 h-8 text-center rounded inset-y-px">Ver Producto</a>-->
+        <div class="relative h-20 w-20 ">
+          <a class="absolute inset-x-0 bottom-0 h-16 text-white bg-red-500 hover:bg-red-700 cursor-pointer text-center rounded mb-6" [routerLink]="['/detalle-producto/',item.idProducto]">Ver Producto</a>
+        </div>
+      </div>
+    </section>
+  </div> 
+</main>
+
+<main class="main" *ngIf="dataService.productos.length != 0">
+<div class="container">
+  <h2 class="main-title" style="line-height: 33px;">Nuevos productos para ti</h2>
+  <section class="container-products p-2" >
+    <div class="product" *ngFor="let item of dataService.productos">
+      <!--<span>Mensaje desde el componente hijo: {{ nombre }}</span>
+      <app-navbar (enviar)="recibirNombre($event)"></app-navbar>-->
+      <img [src]="item.imagen" alt="" class="product__img">
+      <div class="product__description">
+        <h3 class="product__title text-sm text-gray-400 mt-4">{{item.marca}}</h3>
+        <p class="text-center font-bold text-sm mt-2">{{item.nombre}}</p>
+        <span class="product__price mt-2">${{item.precioUnitario}}</span>
+      </div>
+      <i class="product__icon cursor-pointer fas fa-cart-plus" (click)="agregarCarrito(1,item)"></i>
+      <!--<a class="text-white bg-red-500 hover:bg-red-700 cursor-pointer w-20 h-8 text-center rounded inset-y-px">Ver Producto</a>-->
+      <!--<a class="absolute inset-x-0 bottom-0 h-16 text-white bg-red-500 hover:bg-red-700 cursor-pointer text-center rounded mb-6" [routerLink]="['/detalle-producto/',indice]">Ver Producto</a>-->
+      <div class="relative h-20 w-20 ">
+        <a class="absolute inset-x-0 bottom-0 h-16 text-white bg-red-500 hover:bg-red-700 cursor-pointer text-center rounded mb-6" [routerLink]="['/detalle-producto/',item.idProducto]">Ver Producto</a>
+      </div>
+    </div>
+  </section>
+</div> 
+</main>

@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+</head>  
+<body style="border-top-width: 0.1px;">
+    <div class="formulario">
+
+    
+ <form>
+    
+    <h1>Registrate</h1>
+     <div class="contenedor">
+     
+     <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" placeholder="Nombre Completo">
+         
+         </div>
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="text" placeholder="Correo Electronico">
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña">
+         
+         </div>
+         <input type="submit" value="Registrate" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html">Iniciar Sesion</a></p>
+     </div>
+    </form>
+    </div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form Design One | Fazt</title>
+  </head>
+  <body>
+
+<div class="login-box " style="margin-top: 24px;">
+    <img src="../../assets/imagenes/img/LogoForm.png" class="avatar" alt="Avatar Image">
+    <h1>Registrate</h1>
+    <form>
+        <!-- NAME INPUT -->
+        <label for="name">Nombres</label>
+        <input type="text" placeholder="Ingresa tus nombres" name="nombre" [(ngModel)]="nombre"> 
+        <!-- LAST NAME INPUT -->
+        <label for="last-name">Apellidos</label>
+        <input type="text" placeholder="Ingresa tus apellidos" name="apellido" [(ngModel)]="apellido"> 
+      <!-- EMAIL INPUT -->
+      <label for="username">Correo</label>
+      <input type="email" placeholder="Ingresa tu correo" name="email" [(ngModel)]="email">
+      <!-- PASSWORD INPUT -->
+      <label for="password">Contraseña</label>
+      <input type="password" placeholder="Ingresa tu constraseña" name="password" [(ngModel)]="password">
+      <h1 type="hidden" class="text-red-500" style="font-size: 16px;">{{mensaje}}</h1>
+      <input type="button" (click)="registrarse()" value="Registrarse">
+      <!--<a href="#">Don't have An account?</a>-->
+      <p class="text-xs" style="text-align: center;">¿Ya tienes una cuenta?<a class="link cursor-pointer" (click)="iniciaSesion()"> Iniciar Sesion</a></p>
+    </form>
+  </div>
+</body>
+</html>

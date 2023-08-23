@@ -1,0 +1,29 @@
+<header class="main-header">
+    <div class="container container--flex">
+      <div class="main-header__container">
+        <h1 class="main-header__title cursor-pointer" routerLink="/home">YAMANARI'S SHOP</h1>
+        <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+        <nav class="main-nav" id="main-nav">
+          <ul class="menu">
+            <li class="menu__item"><a href="" class="menu__link">HOME</a></li>
+            <li class="menu__item"><a href="" class="menu__link">ABOUT</a></li>
+            <li class="menu__item"><a href="" class="menu__link">FEATURES</a></li>
+            <li class="menu__item"><a href="" class="menu__link">SHOP</a></li>
+            <li class="menu__item"><a href="" class="menu__link">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main-header__container">
+        <span class="main-header__txt">Necesita ayuda</span>
+        <p class="main-header__txt"><i class="wssp fab fa-whatsapp-square"></i> 987 654 321</p>
+      </div>
+      <div class="main-header__container">
+        <div class="cursor-pointer">
+          <a href="" class="main-header__link"><i class="pl-14 fas fa-user"></i></a>
+          <div class="inicio-sesion pl-10" (click)="iniciaSesion()">Iniciar <br>sesión</div>
+        </div>
+        <a href="" class="main-header__btn" routerLink="/cart">Mi carrito <i class="fas fa-shopping-cart" ></i></a>
+        <input type="search" class="main-header__input border border-gray-500 focus:border-blue-500 rounded border-solid focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-75" placeholder="Buscar productos" [(ngModel)]="busqueda"><i class="fas fa-search cursor-pointer" (click)="buscarProducto()"></i>
+      </div>
+    </div>
+</header>
